@@ -23,11 +23,11 @@ def matrix_printer(m, formatter, separator='\t'):
 
 if __name__ == '__main__':
     import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument('n', type=int)
-    parser.add_argument('--seed', type=int, default=0)
-    parser.add_argument('--standard', action='store_true')
-    parser.add_argument('--formatter', default='%d')
+    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('n', type=int, help='Size of latin square')
+    parser.add_argument('--seed', type=int, default=0, help='Seed for random generator')
+    parser.add_argument('--standard', action='store_true', help='Generate standard latin square. Ignoring seed.')
+    parser.add_argument('--formatter', default='%d', help='Text formatter for each element of latin square')
 
     args = parser.parse_args()
 
